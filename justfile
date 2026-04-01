@@ -13,9 +13,9 @@ _default:
     
 alias b := build
 [group('dev')]
-build:
-    # build task here
-
+build files='main.cpp': && test
+    clang -std=gnu++26 {{files}}
+    
 alias r := run
 default_args := 'args here'
 [group('debug')]
@@ -29,7 +29,7 @@ format:
 alias t := test
 [group('dev')]
 test:
-    # test.
+    ./a.exe
 
 alias w := watch
 watch:
